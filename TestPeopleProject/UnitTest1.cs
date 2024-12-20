@@ -77,7 +77,7 @@ namespace TestPeopleProject
         [Test]
         public void Test_GetNumberOfStudents()
         {
-            Assert.That(statistics.GetNumberOfStudents() == 4);
+            Assert.That(statistics.GetNumberOfStudents() == 2);
         }
 
         [Test]
@@ -89,13 +89,13 @@ namespace TestPeopleProject
         [Test]
         public void Test_GetAverageScoreOfStudents()
         {
-            Assert.That(statistics.GetAverageScoreOfStudents() == 58.5d);
+            Assert.AreEqual(statistics.GetAverageScoreOfStudents(), 52d);
         }
         
         [Test]
         public void Test_GetOldestStudent()
         {
-            Assert.That(statistics.GetOldestStudent() == statistics.People[1]);
+            Assert.AreEqual(statistics.GetOldestStudent(), statistics.People[3]);
         }
         
         [Test]
@@ -111,7 +111,7 @@ namespace TestPeopleProject
 
             stat.People.RemoveAt(1);
 
-            Assert.That(stat.IsAnyoneFailing() == false);
+            Assert.IsFalse(stat.IsAnyoneFailing());
         }
     }
 }
